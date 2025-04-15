@@ -24,4 +24,7 @@ features:
   - title: 情感
     link: /emotion/
     details: 我野蛮生长，自己便是月亮。在自己的世界里独善其身，在别人世界里顺其自然
+  - title: 大前端
+    link: /web/html/index/
+    details: 记录前端技术、前端常用知识点
 ---
