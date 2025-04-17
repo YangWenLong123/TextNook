@@ -27,4 +27,16 @@ features:
   - title: 大前端
     link: /web/html/index/
     details: 记录前端技术、前端常用知识点
+  - title: 数据结构与算法
+    link: /algorithm/
+    details: 数据结构与算法是计算机编程的基础
+  - title: 'typescript'
+    details: 'TypeScript是一种由微软推出的开源编程语言'
+    link: /ts/
+  - title: 'vue3'
+    details: 'vue3知识小册'
+    link: /vue3/
+  - title: 'HTTP小册'
+    details: 'HTTP是一种用于传输数据的协议'
+    link: /http/http1.md
 ---
