@@ -1,11 +1,11 @@
 ---
 layout: home
 
-title: 字里行间
+title: 程序员盒子
 keywords:
-  - 字里行间
+  - 程序员盒子
 author: along
-description: '字里行间,编织一个世界'
+description: '程序员盒子,编织一个世界'
 
 hero:
   name: '字里行间,编织一个世界'
