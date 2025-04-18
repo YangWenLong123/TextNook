@@ -27,6 +27,9 @@ features:
   - title: 大前端
     link: /web/html/index/
     details: 记录前端技术、前端常用知识点
+  - title: 前端工程化
+    link: /structure/index1/
+    details: 前端工程化小册
   - title: 数据结构与算法
     link: /algorithm/
     details: 数据结构与算法是计算机编程的基础
@@ -39,4 +42,7 @@ features:
   - title: 'HTTP小册'
     details: 'HTTP是一种用于传输数据的协议'
     link: /http/http1.md
+  - title: 'Linux手册'
+    details: 'Linux的常用指令'
+    link: /linux/
 ---
