@@ -1,9 +1,9 @@
 ---
 layout: home
 
-title: 程序员盒子 ｜ 一个网站提供一揽子服务
+title: 程序员盒子
 keywords:
-  - 程序员盒子
+  - 一个网站提供一揽子服务
 author: along
 description: '程序员盒子,一个网站、提供一揽子服务。程序员盒子，适合初学者的前端程序员，有丰富的学习资源。'
 

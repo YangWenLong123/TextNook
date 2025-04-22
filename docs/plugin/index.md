@@ -36,15 +36,418 @@
 
 # 适配插件
 
-| 插件名称               | 插件地址                                                    | Demo                                                                 | 插件描述         |
-| ---------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------- | ---------------- |
-| postcss-mobile-forever | [查看](https://github.com/wswmsword/postcss-mobile-forever) | [预览](https://wswmsword.github.io/examples/mobile-forever/vanilla/) | 移动端适配的插件 |
+| 插件名称               | 插件地址                                                     | Demo                                                                 | 插件描述                                                                  |
+| ---------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| postcss-mobile-forever | [查看](https://github.com/wswmsword/postcss-mobile-forever)  | [预览](https://wswmsword.github.io/examples/mobile-forever/vanilla/) | PostCSS 伸缩视图转换插件                                                  |
+| postcss-px-to-viewport | [查看](https://www.npmjs.com/package/postcss-px-to-viewport) | -                                                                    | 将 px 单位转换为视口单位的(vw,vh,vmin,vmax)的 PostCSS 插件.               |
+| Autoprefixer           | [查看](https://www.npmjs.com/package/autoprefixer)           | -                                                                    | 基于 [Can I Use](https://caniuse.com/) 的数据， 为 CSS 添加必要的厂商前缀 |
+| postcss-pxtorem        | [查看](https://www.npmjs.com/package/postcss-pxtorem)        | -                                                                    | PostCSS 的一个插件，可以从像素单位生成 rem 单位                           |
 
 # 打包插件
 
-| 插件名称 | 插件地址 | Demo     | 插件描述 |
-| -------- | -------- | -------- | -------- |
-| -        | [查看]() | [预览]() | -        |
+## [@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
+
+Provides Vue 3 JSX & TSX support with HMR.
+
+```ts
+// vite.config.js
+import vueJsx from '@vitejs/plugin-vue-jsx';
+
+export default defineConfig(() => {
+  return {
+    plugins: [
+      vueJsx({
+        // options are passed on to @vue/babel-plugin-jsx
+      }),
+    ],
+  };
+});
+```
+
+## [unplugin-auto-import](https://www.npmjs.com/package/unplugin-auto-import)
+
+为 Vite、Webpack、Rspack、Rollup 和 esbuild 自动按需导入 API，并支持 TypeScript。由 unplugin 提供支持。
+
+### without
+
+```js
+import { computed, ref } from 'vue';
+
+const count = ref(0);
+const doubled = computed(() => count.value * 2);
+```
+
+### with
+
+```js
+const count = ref(0);
+const doubled = computed(() => count.value * 2);
+```
+
+### vite 配置
+
+`pnpm i unplugin-vue-components unplugin-auto-import/vite -D`
+
+```js
+import AutoImport from 'unplugin-auto-import/vite';
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
+
+export default defineConfig(() => {
+  return {
+    plugins: [
+      AutoImport({
+        include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
+        imports: ['vue', 'pinia', 'vue-router'],
+        // 调整自动引入的文件位置
+        dts: './auto-import.d.ts',
+        // 解决自动引入eslint报错问题 需要在eslintrc的extend选项中引入
+        eslintrc: {
+          enabled: true,
+          // 配置文件的位置
+          filepath: './.eslintrc-auto-import.json',
+          globalsPropValue: true,
+        },
+        // 自动导入element
+        resolvers: [AntDesignVueResolver()],
+      }),
+    ],
+  };
+});
+```
+
+## [unplugin-vue-components](https://www.npmjs.com/package/unplugin-vue-components)
+
+按需自动导入 Vue 组件。
+
+```js
+import {
+  AntDesignVueResolver,
+  ElementPlusResolver,
+  VantResolver,
+} from 'unplugin-vue-components/resolvers';
+// vite.config.js
+import Components from 'unplugin-vue-components/vite';
+
+// your plugin installation
+Components({
+  resolvers: [AntDesignVueResolver(), ElementPlusResolver(), VantResolver()],
+});
+```
+
+## [vite-plugin-compression](https://www.npmjs.com/package/vite-plugin-compression)
+
+使用 gzip 或者 brotli 来压缩资源.
+
+```js
+import viteCompression from 'vite-plugin-compression';
+
+export default () => {
+  return {
+    plugins: [viteCompression()],
+  };
+};
+```
+
+### 配置说明
+
+| 参数               | 类型                                  | 默认值          | 说明                                                                 |
+| ------------------ | ------------------------------------- | --------------- | -------------------------------------------------------------------- |
+| verbose            | `boolean`                             | `true`          | 是否在控制台输出压缩结果                                             |
+| filter             | `RegExp or (file: string) => boolean` | `DefaultFilter` | 指定哪些资源不压缩                                                   |
+| disable            | `boolean`                             | `false`         | 是否禁用                                                             |
+| threshold          | `number`                              | -               | 体积大于 threshold 才会被压缩,单位 b                                 |
+| algorithm          | `string`                              | `gzip`          | 压缩算法,可选 [ 'gzip' , 'brotliCompress' ,'deflate' , 'deflateRaw'] |
+| ext                | `string`                              | `.gz`           | 生成的压缩包后缀                                                     |
+| compressionOptions | `object`                              | -               | 对应的压缩算法的参数                                                 |
+| deleteOriginFile   | `boolean`                             | -               | 压缩后是否删除源文件                                                 |
+
+### 示例
+
+```js
+commpressPlugin({
+  verbose: true, // 默认即可
+  disable: false, // 开启压缩(不禁用)，默认即可
+  deleteOriginFile: false, // 删除源文件
+  threshold: 1024, // 压缩前最小文件大小
+  algorithm: 'gzip', // 压缩算法
+  ext: '.gz', // 文件类型
+});
+```
+
+## [splitVendorChunkPlugin](https://github.dev/vitejs/vite)
+
+splitVendorChunk 是 Vite 提供的一种模块分割策略，用于将第三方依赖（如 node_modules 中的模块）提取到单独的 vendor chunk 中
+
+```js
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
+
+export default defineConfig({
+  plugins: [
+    splitVendorChunkPlugin(), // 添加插件
+  ],
+});
+```
+
+## [loadEnv](https://github.dev/vitejs/vite)
+
+使用 dotenv 解析 .env 文件内容
+
+```js
+import { defineConfig, loadEnv } from 'vite';
+import path from 'path';
+
+export default defineConfig(({ mode }) => {
+  // 加载环境变量
+  const env = loadEnv(mode, path.resolve(__dirname, './env'));
+
+  return {
+    define: {
+      // 将环境变量注入到客户端
+      'process.env': env,
+    },
+  };
+});
+```
+
+## [vite-plugin-lazy-import](https://www.npmjs.com/package/vite-plugin-lazy-import)
+
+用于 Vite 的按需懒加载导入 JavaScript 和样式文件。
+
+```js
+// vite.config.js
+import { lazyImport } from 'vite-plugin-lazy-import';
+
+export default defineConfig({
+  // ...
+  plugins: [
+    lazyImport({
+      resolvers: [
+        VxeResolver({
+          libraryName: 'vxe-table',
+        }),
+        VxeResolver({
+          libraryName: 'vxe-pc-ui',
+        }),
+      ],
+    }),
+  ],
+  // ...
+});
+```
+
+## [@vitejs/plugin-basic-ssl](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl)
+
+本地运行支持 https
+
+```js
+// vite.config.js
+import basicSsl from '@vitejs/plugin-basic-ssl';
+
+export default {
+  plugins: [basicSsl()],
+};
+```
+
+## [unocss/vite](https://www.npmjs.com/package/@unocss/vite)
+
+原子化 css
+
+```js
+import UnoCSS from 'unocss/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  plugins: [UnoCSS()],
+});
+```
+
+### Create a `uno.config.ts` file:
+
+```ts
+import { defineConfig, presetAttributify, presetWind3 } from 'unocss';
+
+export default defineConfig({
+  // 预设
+  presets: [
+    // 属性化模式 & 无值的属性模式
+    presetAttributify({
+      prefix: 'un-',
+      prefixedOnly: false,
+    }),
+    // 默认预设
+    presetWind3({
+      important: '#app',
+    }),
+  ],
+  // 自定义规则
+  rules: [],
+  // 自定义快捷方式
+  shortcuts: {
+    'wh-full': 'w-full h-full',
+    'flex-center': 'flex justify-center items-center',
+    'flex-x-center': 'flex justify-center',
+    'flex-y-center': 'flex items-center',
+  },
+});
+```
+
+### Add `virtual:uno.css` to your main entry
+
+```ts
+import 'virtual:uno.css';
+```
+
+## [unplugin-svg-component](https://www.npmjs.com/package/unplugin-svg-component)
+
+```js
+// vite.config.ts
+import { defineConfig } from 'vite';
+import SvgComponent from 'unplugin-svg-component/vite';
+
+export default defineConfig({
+  plugins: [
+    SvgComponent({
+      iconDir: [resolve(__dirname, 'src/common/assets/icons')],
+      preserveColor: resolve(__dirname, 'src/common/assets/icons/preserve-color'),
+      dts: true,
+      dtsDir: resolve(__dirname, 'types/auto'),
+    }),
+  ],
+});
+```
+
+![alt text](image-3.png)
+
+### types/auto
+
+`svg-component.d.ts`
+
+```ts
+/* eslint-disable */
+/* prettier-ignore */
+// biome-ignore format: off
+// biome-ignore lint: off
+// @ts-nocheck
+// Generated by unplugin-svg-component
+declare module '~virtual/svg-component' {
+  const SvgIcon: import("vue").DefineComponent<{
+      name: {
+          type: import("vue").PropType<"dashboard" | "fullscreen-exit" | "fullscreen" | "keyboard-down" | "keyboard-enter" | "keyboard-esc" | "keyboard-up" | "search">;
+          default: string;
+          required: true;
+      };
+  }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+      name: {
+          type: import("vue").PropType<"dashboard" | "fullscreen-exit" | "fullscreen" | "keyboard-down" | "keyboard-enter" | "keyboard-esc" | "keyboard-up" | "search">;
+          default: string;
+          required: true;
+      };
+  }>>, {
+      name: "dashboard" | "fullscreen-exit" | "fullscreen" | "keyboard-down" | "keyboard-enter" | "keyboard-esc" | "keyboard-up" | "search";
+  }>;
+  export const svgNames: ["dashboard", "fullscreen-exit", "fullscreen", "keyboard-down", "keyboard-enter", "keyboard-esc", "keyboard-up", "search"];
+  export type SvgName = "dashboard" | "fullscreen-exit" | "fullscreen" | "keyboard-down" | "keyboard-enter" | "keyboard-esc" | "keyboard-up" | "search";
+  export default SvgIcon;
+}
+```
+
+`svg-component-global.d.ts`
+
+```ts
+/* eslint-disable */
+/* prettier-ignore */
+// biome-ignore format: off
+// biome-ignore lint: off
+// @ts-nocheck
+// Generated by unplugin-svg-component
+import 'vue'
+declare module 'vue' {
+  export interface GlobalComponents {
+    SvgIcon: import('vue').DefineComponent<
+      {
+        name: {
+          type: import('vue').PropType<
+            | 'dashboard'
+            | 'fullscreen-exit'
+            | 'fullscreen'
+            | 'keyboard-down'
+            | 'keyboard-enter'
+            | 'keyboard-esc'
+            | 'keyboard-up'
+            | 'search'
+          >;
+          default: string;
+          required: true;
+        };
+      },
+      {},
+      unknown,
+      {},
+      {},
+      import('vue').ComponentOptionsMixin,
+      import('vue').ComponentOptionsMixin,
+      {},
+      string,
+      import('vue').VNodeProps &
+        import('vue').AllowedComponentProps &
+        import('vue').ComponentCustomProps,
+      Readonly<
+        import('vue').ExtractPropTypes<{
+          name: {
+            type: import('vue').PropType<
+              | 'dashboard'
+              | 'fullscreen-exit'
+              | 'fullscreen'
+              | 'keyboard-down'
+              | 'keyboard-enter'
+              | 'keyboard-esc'
+              | 'keyboard-up'
+              | 'search'
+            >;
+            default: string;
+            required: true;
+          };
+        }>
+      >,
+      {
+        name:
+          | 'dashboard'
+          | 'fullscreen-exit'
+          | 'fullscreen'
+          | 'keyboard-down'
+          | 'keyboard-enter'
+          | 'keyboard-esc'
+          | 'keyboard-up'
+          | 'search';
+      }
+    >;
+  }
+}
+```
+
+### main.ts
+
+```ts
+// main.ts
+import SvgIcon from '~virtual/svg-component';
+
+app.component(SvgIcon.name, SvgIcon);
+```
+
+### 使用
+
+```ts
+// App.tsx
+import SvgIcon from '~virtual/svg-component';
+
+function App() {
+  return (
+    <div className="logo">
+      <SvgIcon name="icon-react"></SvgIcon>
+    </div>
+  );
+}
+```
 
 # git 评论插件
 
@@ -53,3 +456,9 @@
 | giscus     | [查看](https://giscus.app/zh-CN)  | [预览](https://giscus-component.vercel.app/) | 利用 GitHub Discussions 实现的评论系统                     |
 | utterances | [查看](https://utteranc.es/)      | -                                            | A lightweight comments widget built on GitHub issues       |
 | Beaudar    | [查看](https://beaudar.lipk.org/) | -                                            | Beaudar 名称源于粤语“表达”的发音，是 Utterances 的中文版本 |
+
+# 其他插件
+
+| 插件名称 | 插件地址 | Demo     | 插件描述 |
+| -------- | -------- | -------- | -------- |
+| ...      | [查看]() | [预览]() | ...      |
