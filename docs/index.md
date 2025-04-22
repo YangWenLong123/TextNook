@@ -1,15 +1,18 @@
 ---
 layout: home
 
-title: 程序员盒子
+title: 程序员盒子 ｜ 一个网站提供一揽子服务
 keywords:
   - 程序员盒子
 author: along
-description: '程序员盒子,编织一个世界'
+description: '程序员盒子,一个网站、提供一揽子服务。程序员盒子，适合初学者的前端程序员，有丰富的学习资源。'
 
 hero:
-  name: '字里行间,编织一个世界'
-  tagline: Between the lines, weave a world
+  # name: '字里行间,编织一个世界'
+  # tagline: Between the lines, weave a world
+
+  name: 一个网站提供一揽子服务
+  tagline: A website provides a package of services
 
 features:
   - title: 认知

@@ -83,23 +83,23 @@ parseInt(num, 16).toString(8); //十六进制转八进制
 中文转 unicode 编码
 
 ```js
-const str = '子晴';
+const str = '你好';
 
 escape(str).replace(/%u/g,'\u');
 
 //结果
-\u5B50\u6674
+\u4F60\u597D
 ```
 
 unicode 编码转中文
 
 ```js
-const str = '\u5B50\u6674';
+const str = '\u4F60\u597D';
 
 eval("'" + unicode + "'");
 
 //结果
-子晴;
+你好;
 ```
 
 ### escape 编码与 unescape 解码
@@ -107,10 +107,10 @@ eval("'" + unicode + "'");
 unescape() 函数可对通过 escape() 编码的字符串进行解码。
 
 ```js
-let str = '子晴';
+let str = '你好';
 
-escape(str); //%u5B50%u6674 可通过正则匹配替换为unicode编码
-unescape(escape(str)); //子晴
+escape(str); //%u4F60%u597D 可通过正则匹配替换为unicode编码
+unescape(escape(str)); //你好
 ```
 
 escape-html 和 html-escaper
