@@ -47,8 +47,105 @@
 | 雪梨表单         | https://form.antdv.com/home                               |
 | processon 流程图 | https://www.processon.com/diagrams                        |
 
-# 学习网站
+# 代码仓库
 
-| 描述   | 地址               |
-| ------ | ------------------ |
-| GitHub | https://github.com |
+| 描述        | 地址                      |
+| ----------- | ------------------------- |
+| github      | https://github.com        |
+| gitee       | https://gitee.com/explore |
+| jsrun       | https://jsrun.net         |
+| codepen     | https://codepen.io        |
+| CodeSandbox | https://codesandbox.io    |
+| 码上掘金    | https://code.juejin.cn    |
+| 代码小抄    | https://www.codecopy.cn   |
+| Replit      | https://replit.com        |
+| jsfiddle    | https://jsfiddle.net      |
+
+# 代码一键部署
+
+| 描述             | 地址                                        |
+| ---------------- | ------------------------------------------- |
+| vercel           | https://vercel.com/                         |
+| bolt             | https://bolt.new/                           |
+| GitHub Pages     | https://pages.github.com/                   |
+| GitLab Pages     | https://docs.gitlab.com/user/project/pages/ |
+| Netlify          | https://www.netlify.com                     |
+| Cloudflare Pages | https://pages.cloudflare.com                |
+| Render           | https://render.com/                         |
+
+# 学习文档
+
+| 描述                        | 地址                                              |
+| --------------------------- | ------------------------------------------------- |
+| MDN                         | https://developer.mozilla.org/zh-CN/docs/Web      |
+| web.dev                     | https://web.dev/?hl=zh-cn                         |
+| w3cschool                   | https://www.w3cschool.cn/tutorial                 |
+| 现代 JavaScript 教程        | https://zh.javascript.info/                       |
+| JavaScript 框架语法特性对比 | https://component-party.lainbo.com/               |
+| Vue 备忘录                  | https://wangchujiang.com/reference/docs/vue.html  |
+| 语法速查表                  | https://overapi.com/javascript                    |
+| ECMAScript5.1               | https://yanhaijing.com/es5                        |
+| es6 入门教程                | https://es6.ruanyifeng.com/                       |
+| es7                         | https://262.ecma-international.org/7.0/index.html |
+| es8                         | https://262.ecma-international.org/8.0/index.html |
+| TypeScript                  | https://www.typescriptlang.org/                   |
+| 编程时光                    | https://www.coding-time.cn/                       |
+| 算法通关手册                | https://algo.itcharge.cn/                         |
+| Jquery 语法速查表           | https://www.bejson.com/apidoc/jquery/index.html   |
+| 学习笔记                    | https://blog.touchczy.top                         |
+| gulp 文档                   | https://www.gulpjs.com.cn/                        |
+
+# 静态网站生成器
+
+| 描述      | 地址                     |
+| --------- | ------------------------ |
+| vuepress  | https://www.vuepress.cn/ |
+| vitepress | https://vitepress.dev/   |
+| Hexo      | https://hexo.io/zh-cn/   |
+
+# 开放平台
+
+| 描述          | 地址                                        |
+| ------------- | ------------------------------------------- |
+| WPS WebOffice | https://solution.wps.cn/docs/?source=navbar |
+| 钉钉开放平台  | https://open.dingtalk.com/                  |
+| deepseek      | https://platform.deepseek.com/usage         |
+| giscus        | https://giscus.app/zh-CN                    |
+
+# 社区
+
+| 描述               | 地址                                                |
+| ------------------ | --------------------------------------------------- |
+| 掘金               | https://juejin.cn/                                  |
+| segmentfault       | https://segmentfault.com/                           |
+| 博客园             | https://www.cnblogs.com/                            |
+| V2EX               | https://www.v2ex.com/go/programmer                  |
+| 程序员盒子         | https://www.coderutil.com/                          |
+| 程序员资源库       | https://coderlibs.com/                              |
+| 工具锚             | https://www.toolmao.com/                            |
+| 学吧导航           | https://www.xue8nav.com/                            |
+| 印记中文           | https://docschina.org/                              |
+| OSCHINA            | https://www.oschina.net/                            |
+| DEV                | https://dev.to/                                     |
+| stackoverflow      | https://stackoverflow.com/questions                 |
+| tutorialspoint     | https://www.tutorialspoint.com/javascript/index.htm |
+| sitepoint          | https://www.sitepoint.com/javascript/               |
+| 中国独立开发者项目 | https://developer.hubing.online/home                |
+| 程序员导航网       | https://hao.panziye.com/                            |
+| 摸鱼新闻           | https://sbmy.fun/                                   |
+| 影视导航           | https://yingshi.xiaok1.cn/                          |
+| 摸鱼岛             | https://fish.codebug.icu/chat                       |
+
+# 算法
+
+| 描述     | 地址                             |
+| -------- | -------------------------------- |
+| leetcode | https://leetcode.cn/             |
+| 类型小屋 | https://typeroom.cn/problems/all |
+| AI 刷题  | https://juejin.cn/problemset     |
+
+# 其他
+
+| 描述 | 地址 |
+| ---- | ---- |
+| -    | -    |
