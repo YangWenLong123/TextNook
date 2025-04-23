@@ -1,3 +1,8 @@
+---
+title: '程序员盒子、Vue社区'
+description: '搭建最全的 Vue3 生态社区资源文档'
+---
+
 搭建最全的 Vue3 生态社区资源文档
 
 ## Vue 社区
@@ -81,7 +86,8 @@ const goPage = (url) => {
 | vue-print-next             | [查看](https://www.npmjs.com/package/vue-print-next)             | [预览](https://alexpang.cn/vue-print-next/docs/)                     | 高效、灵活的打印解决方案                                     |
 | v3-img-preview             | [查看](https://www.npmjs.com/package/v3-img-preview)             | [预览](https://alfred-skyblue.github.io/v3-img-preview)              | 基于 vue3 的图片预览插件                                     |
 | codemirror-editor-vue3     | [查看](https://www.npmjs.com/package/codemirror-editor-vue3)     | [预览](https://rennzhang.github.io/codemirror-editor-vue3/zh-CN/)    | CodeMirror 的 vue3 组件, 开箱即用                            |
-| vue-draggable-next         | [查看](https://www.npmjs.com/package/codemirror-editor-vue3)     | [预览](https://vue-draggable-next.vercel.app)                        | 基于 Sortable.js 的 Vue 3 拖放组件                           |
+| vue-draggable-next         | [查看](https://www.npmjs.com/package/vue-draggable-next)         | [预览](https://vue-draggable-next.vercel.app)                        | Vue 3 drag-and-drop component based on Sortable.js           |
+| vue.draggable.next         | [查看](https://github.com/SortableJS/vue.draggable.next)         | [预览](https://sortablejs.github.io/vue.draggable.next/#/simple)     | Vue 组件（Vue.js 3.0）允许拖放和与视图模型数组同步           |
 | sortablejs-vue3            | [查看](https://www.npmjs.com/package/sortablejs-vue3)            | [预览](https://sortablejs-vue3.maxleiter.com/)                       | 基于 Sortable.js 的 Vue 3 拖放组件                           |
 | vue3-emoji-picker          | [查看](https://www.npmjs.com/package/vue3-emoji-picker)          | [预览](https://codesandbox.io/p/github/delowardev/vue3-emoji-picker) | Vue3 Emoji Picker                                            |
 | vue3-lazyload              | [查看](https://www.npmjs.com/package/vue3-lazyload)              | [预览](https://murongg.github.io/vue3-lazyload/)                     | 一个 vue3.x 图像延迟加载插件                                 |
@@ -104,7 +110,8 @@ const goPage = (url) => {
 | vue3-google-oauth2         | [查看](https://www.npmjs.com/package/vue3-google-oauth2)         | [预览](https://boring-lamport-199b25.netlify.app/)                   | 谷歌账号登录                                                 |
 | vue3-countdown             | [查看](https://www.npmjs.com/package/vue3-countdown)             | [预览](https://wuanrin.github.io/vue3-countdown)                     | 倒计时组件                                                   |
 | vcolorpicker               | [查看](https://www.npmjs.com/package/vcolorpicker)               | [预览](http://vue-color-picker.rxshc.com/)                           | 基于 Vue 的颜色选择器插件                                    |
-| ...                        | ...                                                              | ...                                                                  | ...                                                          |
+| @vueusemotion              | [查看](https://github.com/vueuse/motion)                         | [预览](https://motion.vueuse.org/)                                   | 可组合项可使您的组件动起来                                   |
+| vue3-dnd                   | [查看](https://github.com/hcg1023/vue3-dnd)                      | [预览](https://www.vue3-dnd.com/)                                    | Drag and Drop for Vue3                                       |
 
 ## 在线演练场
 
