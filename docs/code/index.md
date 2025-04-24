@@ -73,5 +73,3 @@ getData({
 { data: { name: 'along' } } resp
 { data: { name: 'along' } } complete
 ```
-
-#
